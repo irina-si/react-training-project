@@ -1,0 +1,25 @@
+.friendsList {
+  margin: 0 -5px;
+  display: flex;
+  width: 190px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.friendInfo {
+  margin: 0 5px 5px 5px;
+  flex: 0 0 calc(32% - 10px);  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.friendInfo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
