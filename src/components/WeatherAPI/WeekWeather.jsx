@@ -26,42 +26,42 @@ const WeekWeather = () => {
 
     return ( 
         <div className='weatherContainer'>
-        <div className='searchContainer'>
-            <div>
-            <h3>Enter coordinates:</h3>
-            <input 
-                type="text"
-                placeholder='Enter latitude...' 
-                onChange={e => setLatitude(e.target.value)} 
-                value={latitude} 
-            />
-            <input 
-                type="text"
-                placeholder='Enter longitude...' 
-                onChange={e => setLongitude(e.target.value)} 
-                value={longitude} 
-            />
+            <div className='searchContainer'>
+                <div>
+                <h3>Enter coordinates:</h3>
+                <input 
+                    type="text"
+                    placeholder='Enter latitude...' 
+                    onChange={e => setLatitude(e.target.value)} 
+                    value={latitude} 
+                />
+                <input 
+                    type="text"
+                    placeholder='Enter longitude...' 
+                    onChange={e => setLongitude(e.target.value)} 
+                    value={longitude} 
+                />
+                </div>
+                <div>
+                    <button type='submit' onClick={search2}>Week forecast</button>
+                </div>
             </div>
-            <div>
-                <button type='submit' onClick={search2}>Week forecast</button>
-            </div>
-        </div>
-        {(typeof daily != 'undefined') ? (
-        <div className='resultContainer2'>
+            {(typeof daily != 'undefined') ? (
+            <div className='resultContainer2'>
 
-            { week.map(day => 
-                <Moment date={day} format='DD.MM'/> 
-            ) }
+                { week.map(day => 
+                    <Moment date={day} format='DD.MM'/> 
+                ) }
 
-            { daily.map((day) => 
-                <div className='temp'>
-                    {Math.round(day.temp.day)}°c
-                </div> 
-            ) }
+                { daily.map((day) => 
+                    <div className='temp'>
+                        {Math.round(day.temp.day)}°c
+                    </div> 
+                ) }
 
+            </div> 
+            ) : ('')}   
         </div> 
-        ) : ('')}   
-    </div> 
     );
 }
 
