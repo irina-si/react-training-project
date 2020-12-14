@@ -11,6 +11,8 @@ import NavbarContainer from './components/Navbar/NavbarContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import WeatherAPI from './components/WeatherAPI/WeatherAPI';
 
+console.log(UsersContainer);
+
 function App(props) {
   return (
    <BrowserRouter>

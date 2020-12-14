@@ -1,0 +1,9 @@
+.selectedPage {
+    color: blue;
+    font-weight: bold;
+}
+
+.selectPageMenu span {
+    cursor: pointer;
+    margin: 5px;
+}
