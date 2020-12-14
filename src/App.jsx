@@ -10,6 +10,8 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import UsersContainer from './components/Users/UsersContainer';
 
+console.log(UsersContainer);
+
 function App(props) {
   return (
    <BrowserRouter>
