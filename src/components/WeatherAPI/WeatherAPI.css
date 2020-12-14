@@ -1,0 +1,85 @@
+.weatherContainer, .searchContainer, .searchContainer h3, .searchContainer input, .searchContainer button, .resultContainer, .resultContainer2, .location, .date, .temperature, .celsius, .fahrenheit {
+    margin: 10px;
+}
+
+.weatherContainer {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+    padding-bottom: 1px;
+    max-width: 450px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    padding-top: 15px;
+}
+
+input {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+    background: #ddd;
+}
+
+input:focus {
+    background: #eee;
+}
+
+button {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    outline: none;
+    border-radius: 5px;
+    width: 140px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.date {
+    font-size: 1.2rem;
+    padding: 8px 0;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: 2px px rgba(0, 0, 0, 0.3);
+    font-size: 1.7rem;
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #eee;
+    max-width: 180px;
+    margin-bottom: 20px !important;
+}
+
+.celsius, .fahrenheit {
+    padding: 0 10px;
+}
+
+.location, .temp {
+    font-size: 1.1rem;
+}
+
+.searchContainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: end;
+}
+
+.resultContainer2 {
+    display: grid;
+    grid-template-rows: 25px 35px;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+

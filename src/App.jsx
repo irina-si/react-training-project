@@ -9,6 +9,7 @@ import Settingss from './components/Settingss/Settingss';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import WeatherAPI from './components/WeatherAPI/WeatherAPI';
 
 function App(props) {
   return (
@@ -23,6 +24,7 @@ function App(props) {
         <Route path='/music' component={Music}/>
         <Route path='/news' component={News}/>
         <Route path='/settings' component={Settingss}/>
+        <Route path='/weather' component={WeatherAPI}/>
       </div>  
     </div>
    </BrowserRouter>

@@ -4,7 +4,8 @@ let initialState = {
                         "Users",
                         "News",
                         "Music",
-                        "Settings"],
+                        "Settings",
+                        "Weather"],
         friends: ["Cвета", "Андрей", "Степа", "Илья", "Маша"],
 }
 

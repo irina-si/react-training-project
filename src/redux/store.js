@@ -35,7 +35,8 @@ let store = {
                             "Dialogs",
                             "News",
                             "Music",
-                            "Settings"],
+                            "Settings",
+                            "Weather"],
             friends: ["Cвета", "Андрей", "Степа", "Илья", "Маша"],
          }
     },
