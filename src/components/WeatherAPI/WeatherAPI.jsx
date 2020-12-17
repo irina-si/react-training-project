@@ -1,11 +1,11 @@
 import React from 'react'; 
-import CurrentWeather from './СurrentWeather';
+import CurrentWeatherContainer from './Current weather/СurrentWeatherContainer';
 import WeekWeather from './WeekWeather';
 
 const WeatherAPI = () => {
     return (       
         <div>
-            <CurrentWeather />
+            <CurrentWeatherContainer />
             <WeekWeather />
         </div>
     )
