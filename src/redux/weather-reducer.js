@@ -1,5 +1,6 @@
 const SET_WEATHER = 'SET_WEATHER';
 const SET_QUERY = 'SET_QUERY';
+const UNMOUNT_WEATHER_COMPONENT = 'UNMOUNT_WEATHER_COMPONENT';
 
 const initialState = {
     api: {
@@ -49,7 +50,11 @@ const weatherReducer = (state = initialState, action) => {
             return {
                 ...state,
                 queryString: action.query,
-            }
+            };
+        case UNMOUNT_WEATHER_COMPONENT:
+            return {
+                ...initialState,
+            };
         default: return state;
     }
 }
@@ -66,6 +71,12 @@ export const setQuery = (query) => {
     return {
         type: SET_QUERY,
         query
+    }
+}
+
+export const unmountWeatherComponent = () => {
+    return {
+        type: UNMOUNT_WEATHER_COMPONENT,
     }
 }
 

@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import CurrentWeather from './CurrentWeather';
-import { setWeather, setQuery } from './../../../redux/weather-reducer'
+import { setWeather, setQuery, unmountWeatherComponent } from './../../../redux/weather-reducer'
+import { withRouter } from 'react-router-dom';
 
 const CurrentWeatherContainer = (props) => {
+
+    useEffect( () => {
+        return props.unmountWeatherComponent;
+    }, []);
 
     const search = () => {
         fetch(`${props.staticURL}weather?q=${props.query}&units=metric&appid=${props.apiKey}`)
             .then(res => res.json())
-            .then(result => {         
-                props.setWeather(result);
-            })
+            .then(result => {
+                if (result.cod === 200) {
+                    props.setWeather(result);
+                } else {
+                    return Promise.reject(result.message); 
+                }           
+            }).catch( (message) => {
+                alert(message);
+                props.unmountWeatherComponent();
+            });
     }
 
     return ( 
         <CurrentWeather search={search} temperature={props.temperature} countryName={props.countryName}
             countryCode={props.countryCode}  weatherDescription={props.weatherDescription} query={props.query}
-            setQuery={props.setQuery}
+            setQuery={props.setQuery} 
             />
     )
 }
@@ -34,7 +46,10 @@ let mapStateToProps = (state) => {
     
 }
 
+let withUrlCurrentWeatherContainer = withRouter(CurrentWeatherContainer);
+
 export default connect(mapStateToProps, {
     setWeather,
     setQuery,
-})(CurrentWeatherContainer); 
+    unmountWeatherComponent
+})(withUrlCurrentWeatherContainer); 
