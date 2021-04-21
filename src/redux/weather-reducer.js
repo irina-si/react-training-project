@@ -1,14 +1,10 @@
+import { weatherAPI } from '../api/api';
+
 const SET_WEATHER = 'SET_WEATHER';
 const SET_QUERY = 'SET_QUERY';
 const UNMOUNT_WEATHER_COMPONENT = 'UNMOUNT_WEATHER_COMPONENT';
 
 const initialState = {
-    api: {
-        key: '14e00696510fc36c2be227c72bcd3f25',
-        key2: '4a63caf0cdc9b0bdbc8fcfa6681a86a2',
-        staticURL: 'https://api.openweathermap.org/data/2.5/',
-    },
-
     weatherAPIResponse: {
             "coord": {
               "lon": 0,
@@ -78,6 +74,18 @@ export const unmountWeatherComponent = () => {
     return {
         type: UNMOUNT_WEATHER_COMPONENT,
     }
+}
+
+export const getCurrentWeatherThunkCreator = (cityName) => (dispatch) => {
+    weatherAPI.getCurrentWeather(cityName)
+    .then(result => {
+        if (result.cod === 200) {
+            dispatch(setWeather(result));
+        }      
+    }).catch((error) => {
+        alert(error.message);
+        dispatch(unmountWeatherComponent());
+    }); 
 }
 
 export default weatherReducer;

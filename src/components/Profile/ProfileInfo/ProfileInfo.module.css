@@ -1,3 +1,8 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.name {
+    color: grey;
+    font-size: 150%;
+}

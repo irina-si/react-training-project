@@ -22,7 +22,7 @@ const Dialogs = (props) => {
     
     let editMessage = () => {
         let text = newMessageElement.current.value;
-        props.editMessage(text);
+        return props.editMessage(text);
     }
 
     return (
